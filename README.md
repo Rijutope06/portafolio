@@ -1,6 +1,3 @@
-
-Te dejo también una versión más pro y más atractiva para GitHub, con badges y una redacción más técnica:
-
 ```md
 # Portfolio Personal
 

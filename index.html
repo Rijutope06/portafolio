@@ -190,7 +190,7 @@
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       padding: 10px 16px;
       border-radius: 999px;
       background: rgba(139, 92, 246, 0.12);
@@ -199,6 +199,16 @@
       font-size: 0.92rem;
       margin-bottom: 20px;
       animation: fadeUp 0.8s ease both;
+    }
+
+    .eyebrow-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #e9ddff;
+      flex-shrink: 0;
     }
 
     .hero h1 {
@@ -431,16 +441,31 @@
     }
 
     .skill-icon {
-      width: 52px;
-      height: 52px;
+      width: 58px;
+      height: 58px;
       margin: 0 auto 14px;
       display: grid;
       place-items: center;
-      border-radius: 14px;
+      border-radius: 16px;
       background: rgba(139, 92, 246, 0.16);
       border: 1px solid rgba(139, 92, 246, 0.16);
       color: #e9ddff;
-      font-weight: 700;
+      transition: transform var(--transition), background var(--transition);
+    }
+
+    .skill-card:hover .skill-icon {
+      transform: translateY(-2px) scale(1.03);
+      background: rgba(139, 92, 246, 0.22);
+    }
+
+    .skill-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .skill-card h3 {
@@ -651,7 +676,15 @@
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Aprendiendo DevOps</div>
+          <div class="eyebrow">
+            <span class="eyebrow-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"></path>
+              </svg>
+            </span>
+            <span>Aprendiendo DevOps</span>
+          </div>
+
           <h1>Hola, soy <span>Ricardo Junior Torres Perez</span></h1>
           <p>
             Analista y desarrollador de sistemas de información. Estoy empezando este
@@ -731,31 +764,66 @@
         <div class="panel reveal">
           <div class="skills-grid">
             <article class="skill-card">
-              <div class="skill-icon">Li</div>
+              <div class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 17V5a2 2 0 0 1 2-2h12"></path>
+                  <path d="M8 21h10a2 2 0 0 0 2-2V7H8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z"></path>
+                  <path d="M12 17h4"></path>
+                </svg>
+              </div>
               <h3>Linux</h3>
               <p>Base para administración, terminal y operaciones.</p>
             </article>
 
             <article class="skill-card">
-              <div class="skill-icon">Do</div>
+              <div class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="7" width="8" height="8" rx="2"></rect>
+                  <rect x="13" y="7" width="8" height="8" rx="2"></rect>
+                  <path d="M7 15v4"></path>
+                  <path d="M17 15v4"></path>
+                  <path d="M7 19h10"></path>
+                </svg>
+              </div>
               <h3>Docker</h3>
               <p>Contenedores y entornos consistentes para desarrollo.</p>
             </article>
 
             <article class="skill-card">
-              <div class="skill-icon">CI</div>
+              <div class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 12h8"></path>
+                  <path d="M12 12l-3-3"></path>
+                  <path d="M12 12l-3 3"></path>
+                  <path d="M20 12h-8"></path>
+                  <path d="M12 12l3-3"></path>
+                  <path d="M12 12l3 3"></path>
+                </svg>
+              </div>
               <h3>CI/CD</h3>
               <p>Automatización de integración y despliegue continuo.</p>
             </article>
 
             <article class="skill-card">
-              <div class="skill-icon">K8</div>
+              <div class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3l7 4v10l-7 4-7-4V7l7-4z"></path>
+                  <path d="M12 8l3 2v4l-3 2-3-2v-4l3-2z"></path>
+                </svg>
+              </div>
               <h3>K8s</h3>
               <p>Orquestación y escalado de aplicaciones modernas.</p>
             </article>
 
             <article class="skill-card">
-              <div class="skill-icon">Tf</div>
+              <div class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3v18"></path>
+                  <path d="M5 7l7-4 7 4"></path>
+                  <path d="M5 17l7 4 7-4"></path>
+                  <path d="M8 12h8"></path>
+                </svg>
+              </div>
               <h3>Terraform</h3>
               <p>Infraestructura como código y entornos reproducibles.</p>
             </article>
